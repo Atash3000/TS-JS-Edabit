@@ -1,0 +1,22 @@
+{
+  "name": "ts-js-edabit",
+  "version": "1.0.0",
+  "description": "TS-JS Edabit",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Atash3000/TS-JS-Edabit.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Atash3000/TS-JS-Edabit/issues"
+  },
+  "homepage": "https://github.com/Atash3000/TS-JS-Edabit#readme",
+  "dependencies": {
+    "lite-server": "^2.6.1"
+  }
+}
