@@ -10,4 +10,5 @@ function makePlusFunction(baseNum: number): Ifunction {
     return val + baseNum
   }
 }
-//
+const plus7 = makePlusFunction(7)
+plus7(5) //# output : 12
