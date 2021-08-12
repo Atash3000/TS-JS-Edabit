@@ -1,27 +1,21 @@
-// Create a function that takes a "base number" as an argument. This function should return another function which takes a new argument, and returns the sum of the "base number" and the new argument.;
+// Data Structure arrays
+const arr = ['a', 'b', 'c', 'd']
+console.log(arr)
 
-//1) Create InterFace for return type of Factory function;
+const c = arr[2]
+arr.push('e') // # Big O(1)
+arr.pop() // # Big O(1)
+// @ We saying go to last index and simple remove item
+arr.unshift('x') // # 'x' has been added to the begginig of array. Big O(n^2)
+// # to add an item beginnig of array we structured these indexes.
+arr.splice(3, 0, 'ZZ') // # go to index of 1 and delete 0 and add 'ZZ'
+// # Big O(n/2) for slice since we added in the middle of array and item. So it is itirationg half array;
+// ? deleting  & inserting to an array is not optiomal way. Big O(n) (linear time)
 
-interface Ifunction {
-  (b: number): number
-}
-function makePlusFunction(baseNum: number): Ifunction {
-  return function a(val: number) {
-    return val + baseNum
-  }
-}
-const plus7 = makePlusFunction(7)
-plus7(5) //# output : 12
+// ? Static arrays --> like Tulps, we have limited memory and type
+// ? Dinamic arrays --> allow us to copy for new location in memory;
 
-//@------------------------------NEXT----------------------------@//
-// Closures are functions that remember their lexical environments. Lexical environments mean the environment in which the function was declared.
+type Tulp = [number, number, number, number] //# --> Static array example
+const myStaticArr: Tulp = [5, 5, 7, 8]
 
-function greetingMaker(str: string) {
-  function closure(name: string) {
-    return str + ',' + name
-  }
-  return closure
-}
-
-const greeting = greetingMaker('Hello')
-greeting('James') //➞ "Hello, James"
+console.log(arr)
