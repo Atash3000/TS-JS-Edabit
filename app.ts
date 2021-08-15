@@ -25,10 +25,7 @@ const myStaticArr: Tulp = [5, 5, 7, 8]
 //If you are already on the same tile, return false, as you would be advancing away.
 //Expect only positive integer inputs.
 function possibleBonus(a: number, b: number): boolean {
-  if (a && b) {
-    return true
-  }
-  return false
+  return true
 }
 possibleBonus(3, 7) // ➞ true
 
