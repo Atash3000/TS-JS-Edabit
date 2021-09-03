@@ -24,11 +24,40 @@ const myStaticArr: Tulp = [5, 5, 7, 8]
 //You cannot move backward (which is why example #3 doesn't work).
 //If you are already on the same tile, return false, as you would be advancing away.
 //Expect only positive integer inputs.
-function possibleBonus(a: number, b: number): number {
-  return a + b
+
+function possibleBonus(a: number, b: number): boolean {
+  return true
 }
 possibleBonus(3, 7) // ➞ true
 
 possibleBonus(1, 9) //➞ false
 
 possibleBonus(5, 3) // ➞ false
+
+//Create a function that takes two numbers and a mathematical operator + - / * and will perform a calculation with the given numbers.
+
+type OperatorType = '/' | '+' | '*' | '-'
+
+function calculator(
+  num1: number,
+  operator: OperatorType,
+  num2: number
+): number {
+  switch (operator) {
+    case '*':
+      return num1 * num2
+    case '+':
+      return num1 + num2
+    case '-':
+      return num1 - num2
+    case '/':
+      return num1 / num2
+    default:
+      return num1 + num2
+  }
+}
+calculator(2, '+', 2) // ➞ 4
+
+calculator(2, '*', 2) // ➞ 4
+
+calculator(4, '/', 2) // ➞ 2
