@@ -42,7 +42,7 @@ function calculator(
   num1: number,
   operator: OperatorType,
   num2: number
-): number {
+): number | undefined {
   switch (operator) {
     case '*':
       return num1 * num2
@@ -53,7 +53,7 @@ function calculator(
     case '/':
       return num1 / num2
     default:
-      return num1 + num2
+      return undefined
   }
 }
 calculator(2, '+', 2) // ➞ 4
