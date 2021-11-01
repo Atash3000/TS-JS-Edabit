@@ -2,7 +2,7 @@
   "name": "ts-js-edabit",
   "version": "1.0.0",
   "description": "TS-JS Edabit",
-  "main": "app.js",
+  "main": "app.ts",
   "scripts": {
     "start": "lite-server"
   },
@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/Atash3000/TS-JS-Edabit#readme",
   "dependencies": {
-    "lite-server": "^2.6.1"
+    "lite-server": "^2.6.1",
+    "nodemon": "^2.0.12"
   }
 }

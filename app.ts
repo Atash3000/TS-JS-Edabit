@@ -1,16 +1,24 @@
-// @ Create a functon which accepts an array in parametrs and removes duplicate items and retrurns array of uniq items
-const removeDublicate = (arr: any[]): any[] => {
-  const copeArr = arr.slice(0)
-  // To finct duplicates we can search in dex og item in an an areray anf then if thats not ther we can push each item to final array
-  const finalArr: any = []
-  for (let i = 0; i < copeArr.length; i++) {
-    const exist = finalArr.indexOf(copeArr[i]) !== -1
-    if (!exist) {
-      finalArr.push(copeArr[i])
-    }
-  }
+// Algorithms and data structures
 
-  console.log(finalArr)
+
+//@ Big O noation for Time complexity
+// Time Complexity
+
+function boooo(n:number[]) {
+  for (let i = 0; i < n.length; i++){
+    console.log('boooo')
+  }
 }
 
-removeDublicate([1, 2, 3, 3, 1, 2, 6, 7])
+boooo([1, 2, 3, 4, 5]) // space complexity O(1)
+// when we talk about Time complexity we think about additial. we dont care what and how large  input is.
+
+function arrayOfNTimes(n:number[]) {
+  let arr:string[] = []; // O(n)
+    for (let i = 1; i < n.length+1; i++) {
+    arr.push('hellos'+i)
+  }
+  console.log(arr)
+}
+
+arrayOfNTimes([1,2,3,4,5]) // TC is O(n)
