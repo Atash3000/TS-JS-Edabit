@@ -1,24 +1,27 @@
-// Algorithms and data structures
+// Objects
+// Objects in JS are refence types. and arrays and objects are all OBJECTS in JS so all them are reference types
 
+const result = {} === {} // this will return FALSE since our machine creates new memory for each OBJECT with new address and they can never be same so it will return FALSE
 
-//@ Big O noation for Time complexity
-// Time Complexity
+const obj1 = { name: 'Kelly' }
+let obj2 = { name: 'Kelly' }
+const isTheSame = obj1 === obj2 // will return FALSE.
 
-function boooo(n:number[]) {
-  for (let i = 0; i < n.length; i++){
-    console.log('boooo')
+const obj3 = { name: 'BOB' }
+const obj4 = obj3
+console.log(obj3 === obj4)  // will return true since they have same address in the momory
+type FunctionReturnType = {
+  name: string,
+  age: number,
+  phone:number
+}
+function addNumber(num: number):FunctionReturnType{
+  return {
+    name: 'Kelly',
+    age: 88,
+    phone:3330000
   }
 }
 
-boooo([1, 2, 3, 4, 5]) // space complexity O(1)
-// when we talk about Time complexity we think about additial. we dont care what and how large  input is.
+addNumber(10)
 
-function arrayOfNTimes(n:number[]) {
-  let arr:string[] = []; // O(n)
-    for (let i = 1; i < n.length+1; i++) {
-    arr.push('hellos'+i)
-  }
-  console.log(arr)
-}
-
-arrayOfNTimes([1,2,3,4,5]) // TC is O(n)
