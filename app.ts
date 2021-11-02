@@ -1,27 +1,92 @@
-// Objects
-// Objects in JS are refence types. and arrays and objects are all OBJECTS in JS so all them are reference types
+// Arrays
 
-const result = {} === {} // this will return FALSE since our machine creates new memory for each OBJECT with new address and they can never be same so it will return FALSE
+class MyArray {
+  length: number
+  data: { [key: number]: string | number }
+  constructor() {
+    this.length = 0
+    this.data = {}
+  }
 
-const obj1 = { name: 'Kelly' }
-let obj2 = { name: 'Kelly' }
-const isTheSame = obj1 === obj2 // will return FALSE.
+  get(index: number) {
+    return this.data[index]
+  }
 
-const obj3 = { name: 'BOB' }
-const obj4 = obj3
-console.log(obj3 === obj4)  // will return true since they have same address in the momory
-type FunctionReturnType = {
-  name: string,
-  age: number,
-  phone:number
-}
-function addNumber(num: number):FunctionReturnType{
-  return {
-    name: 'Kelly',
-    age: 88,
-    phone:3330000
+  push(item: string | number) {
+    this.data[this.length] = item
+    this.length++
+    return this.length
+  }
+
+  delete(index: number) {
+    const item = this.data[index]
+    this.shiftItems(index)
+    return
+  }
+
+  shiftItems(index: number) {
+    for (let i = index; i < this.length; i++) {
+      this.data[i] = this.data[i + 1]
+    }
+    delete this.data[this.length - 1]
+    this.length--
+  }
+
+  pop() {
+    let lastItem: string | number = ''
+    let indexToBeDeleted: number = 0
+    for (let i = 0; i < this.length; i++) {
+      lastItem = this.data[i]
+
+      indexToBeDeleted = i
+      // delete this.data[indexToBeDeleted]
+      //
+    }
+    this.delete(indexToBeDeleted)
+    this.length--
+    return lastItem
   }
 }
 
-addNumber(10)
+const newArray = new MyArray()
+console.log(newArray.get(0))
+newArray.push('hi')
+newArray.push('bye')
+//newArray.delete(1)
+newArray.push('molly')
+newArray.push('adam')
+newArray.push('ken')
 
+const lastItem = newArray.pop()
+
+console.log(lastItem, 'lastItem')
+console.log(newArray)
+
+const string = 'hello'
+
+function reverseString(str: string) {
+  const arr = str.split('') // O(n)
+  let result = []
+  const len = arr.length - 1 // O(n)
+  for (let i = 0; i < arr.length; i++) {
+    // O(n)
+    result[i] = arr[len - i]
+  }
+  return result
+}
+// O(n)
+reverseString(string)
+
+const arr = [1, 'v', '3', 'h', 5, 7, true, false, {}];
+function findOnlyNumbers(array:any[]) {
+  let onlyNumbers:number[] = [];
+  for (let i = 0; i < arr.length; i++){
+    if (typeof arr[i] !== 'number') {
+  onlyNumbers.push(arr[i])
+}
+  }
+
+  return onlyNumbers
+}
+
+findOnlyNumbers(arr)
