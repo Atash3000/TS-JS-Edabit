@@ -1,92 +1,18 @@
-// Arrays
+//Create a function that takes an arr and returns the sum of the numbers between two "1"s.
 
-class MyArray {
-  length: number
-  data: { [key: number]: string | number }
-  constructor() {
-    this.length = 0
-    this.data = {}
-  }
-
-  get(index: number) {
-    return this.data[index]
-  }
-
-  push(item: string | number) {
-    this.data[this.length] = item
-    this.length++
-    return this.length
-  }
-
-  delete(index: number) {
-    const item = this.data[index]
-    this.shiftItems(index)
-    return
-  }
-
-  shiftItems(index: number) {
-    for (let i = index; i < this.length; i++) {
-      this.data[i] = this.data[i + 1]
-    }
-    delete this.data[this.length - 1]
-    this.length--
-  }
-
-  pop() {
-    let lastItem: string | number = ''
-    let indexToBeDeleted: number = 0
-    for (let i = 0; i < this.length; i++) {
-      lastItem = this.data[i]
-
-      indexToBeDeleted = i
-      // delete this.data[indexToBeDeleted]
-      //
-    }
-    this.delete(indexToBeDeleted)
-    this.length--
-    return lastItem
-  }
-}
-
-const newArray = new MyArray()
-console.log(newArray.get(0))
-newArray.push('hi')
-newArray.push('bye')
-//newArray.delete(1)
-newArray.push('molly')
-newArray.push('adam')
-newArray.push('ken')
-
-const lastItem = newArray.pop()
-
-console.log(lastItem, 'lastItem')
-console.log(newArray)
-
-const string = 'hello'
-
-function reverseString(str: string) {
-  const arr = str.split('') // O(n)
-  let result = []
-  const len = arr.length - 1 // O(n)
-  for (let i = 0; i < arr.length; i++) {
+function spaceApart(arr: (string|number)[]): number | string {
+  let sum = 0 // O(1)
+  const index = arr.indexOf('1') // O(n)
+  const slicedArr = arr.slice(index) // O(n/2)
+  for (let i = 0; i < slicedArr.length; i++) {
     // O(n)
-    result[i] = arr[len - i]
+    if (typeof slicedArr[i] === 'number') {
+      sum = sum + Number(slicedArr[i])
+    }
   }
-  return result
+  return sum > 0 ? sum : 'Invalid';
 }
-// O(n)
-reverseString(string)
-
-const arr = [1, 'v', '3', 'h', 5, 7, true, false, {}];
-function findOnlyNumbers(array:any[]) {
-  let onlyNumbers:number[] = [];
-  for (let i = 0; i < arr.length; i++){
-    if (typeof arr[i] !== 'number') {
-  onlyNumbers.push(arr[i])
-}
-  }
-
-  return onlyNumbers
-}
-
-findOnlyNumbers(arr)
+// this function is big O(n) which is Linear time
+spaceApart([1, 0, 1, '1', 4, 3, 2, 3, 2, '1']) // ➞ 14
+spaceApart(['1', 9, 20, 38, '1']) // ➞ 67
+spaceApart([3, 2, 9, '1', 0, 0, -1, '1']) // ➞ "invalid"
